@@ -8,8 +8,10 @@ from PIL import Image
 
 DEVICE = 0 if torch.cuda.is_available() else "cpu"
 
-CLS_MODEL_PATH = r"D:\Swinburne\Year 3\2026-HX01\Final\Spring26_COS40007\models\rubbish_cls\best.pt"
-SEG_MODEL_PATH = r"D:\Swinburne\Year 3\2026-HX01\Final\Spring26_COS40007\models\rubbish_seg\best.pt"
+# Use relative paths from project root
+PROJECT_ROOT = Path(__file__).parent.parent
+CLS_MODEL_PATH = str(PROJECT_ROOT / "models" / "rubbish_cls" / "best.pt")
+SEG_MODEL_PATH = str(PROJECT_ROOT / "models" / "rubbish_seg" / "best.pt")
 CLS_THRESH     = 0.93
 SEG_CONF       = 0.10  
 
